@@ -1,11 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso de CSS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        h1 {
+            color: rgb(19, 61, 177);
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Aprendiendo CSS</h1>
+    
+    <article id="temario-css">
+        <h1>Aprendiendo CSS</h1>
+        <p><i style="font-weight: bold;color: orange;">Cascading Style Sheets</i> - Hojas de Estilo en Cascada</p>
+        <h2>Temario del Curso</h2>
+        <ul>
+            <li><a href="#selectores-basicos">Selectores básicos</a></li>
+            <li><a href="#selectores-avanzados">Selectores avanzados</a></li>
+
+            <li><a href=""></a></li>
+        </ul>
+    </article>
+
+    <article id="selectores-basicos">
+        <h2>Selectores básicos</h2>
+        <p>The background image will retain its original size.
+            For example, this background image is 960px by 640px large. Its aspect ratio is 3 by 2. It's bigger than its
+            container (which is 150px high) and will thus be clipped.
+        </p>
+        <p id="parrafo-dos">
+            You can use percentage values. In this example, the radius starts halfway on the bottom border, and ends
+            halfway on the right border.
+        </p>
+        <p class="text-32 bg-skyblue">
+            You can use percentage values. In this example, the radius starts halfway on the bottom border, and ends
+            halfway on the left border.
+        </p>
+        <p class="text-20 bg-steelblue text-white">
+            You can use percentage values. In this example, the radius starts halfway on the bottom border, and ends
+            halfway on the left border.
+        </p>
+        <p class="text-32 bg-steelblue text-white">
+            A single finger pointing upward, which could be used to represent the number one, or to ask a question.
+        </p>
+        <a href="#temario-css">☝️</a>
+    </article>
+
+    <hr>
+
+    <article id="selectores-avanzados">
+        <h2>Selectores avanzados</h2>
+        <h3>Selectores de hijos</h3>
+        <h4>Selectores de hijos directos</h4>
+        <ul class="hijos-directos">
+            <li><b>Primavera</b></li>
+            <li><b>Verano</b></li>
+            <li><b>Otoño</b></li>
+            <li><b>Invierno</b></li>
+        </ul>
+        <h4>Selector de hijos descendientes</h4>
+        <ul class="hijos-descendientes">
+            <li><b>Primavera</b></li>
+            <li><b>Verano</b></li>
+            <li><b>Otoño</b></li>
+            <li><b>Invierno</b></li>
+        </ul>
+        <h3>Selectores de hermanos</h3>
+        <h4>Selector de hermanos(en general)</h4>
+        <ul>
+            <li><b>Primavera</b></li>
+            <li class="hermanos-general"><b>Verano</b></li>
+            <li><b>Otoño</b></li>
+            <li><b>Invierno</b></li>
+        </ul>
+        <h4>Selector de hermanos(adyacente)</h4>
+        <ul>
+            <li><b>Primavera</b></li>
+            <li class="hermanos-adyacentes"><b>Verano</b></li>
+            <li><b>Otoño</b></li>
+            <li><b>Invierno</b></li>
+        </ul>
+        <h3>Selectores de Atributos</h3>
+        <nav class="selectores-atributos">
+            <ul>
+                <li><a href="https://jonmircha.com" target="_blank">Inicio</a></li>
+                <li><a class="menu-item cursos button" href="https://jonmircha.com/cursos" target="_blank">Cursos</a></li>
+                <li><a href="https://jonmircha.com/blog" target="_blank">Blog</a></li>
+                <li><a href="https://jonmircha.com/cv" target="_blank">CV</a></li>
+                <li><a class="menu-item cursos button href="http://jonmircha.com/ahora" target="_blank">Ahora</a></li>
+                <li><a href="http://jonmircha.com/notas" target="_blank">Notas</a></li>
+                <li><a href="#temario-css">Regsresar al temario</a></li>
+
+            </ul>
+        </nav>
+        <h4></h4>
+        <a href="#temario-css">☝️</a>
+    </article>
+
 </body>
+
 </html>
