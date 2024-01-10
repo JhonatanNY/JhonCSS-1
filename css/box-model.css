@@ -1,0 +1,82 @@
+/*
+
+Modelo de caja: Es la forma en que CSS vee a los elementos HTML y ¿Cómo los ve? como si
+fueran cajas con las siguientes propiedades:
+1)Contenido(content)
+2)El borde(border)
+3)El relleno(padding):Son las distancias internas
+4)El márgen(margin): Son las distancias externas
+
+Dentro del modelo de caja hay que considerar que una caja tendrá 4 lados::after
+1.Arriba(top)
+2.Derecha(rigth)
+3.Abajo(bottom)
+4.Izquierda(left)
+
+*/
+
+h1{
+    width: 400px;
+    height: 200px;
+    /* propiedades de shorthand */
+    border-color: green;
+    border-style: solid;
+    border-width: medium;
+    border-top-color: red; 
+    border:2px dashed rgb(38, 0, 255);
+}
+.caja-uno,
+.caja-dos{
+    background-color: chocolate;
+    border: medium solid orange;
+  
+/*
+Esto aplica para margin y padding
+1 valor = aplicar a los 4 lados
+2 valor = primer valor es para los lados verticales
+          segundo valor es para los lados horizontales
+3 valor = primer valor es para TOP
+          segundo valor es para los lados horizontales            
+          tercer valor es para BOTTOM
+4 valor = primer valor es para TOP
+          segundo valor es para RIGHT            
+          tercer valor es para BOTTOM
+          cuarto valor es para LEFT
+*/
+    padding: 20px;
+    margin: 20px;
+    padding: 20px 40px;
+    margin: 40px 20px;
+    padding: 0 40px 20px;
+    margin: 50px 30px 0;
+    padding: 0 40px 20px 50px;
+    margin: 100px 50px 30px 0 ;
+
+}
+/*
+Caja en Linea
+    -Ocupan el espacio necesario para mostrar su contenido.
+    -No tienen dimensiones modificables(alto, ancho)
+    -Permiten otros elementos a su lado.
+    -Padding y margin solo empujan a elementos adyacentes en horizontal, NUNCA EN VERTICAL
+    -En padding si toma los 4 valores, pero en margin solo toma los valores horizontales
+Caja de Bloque
+    -Ocupan todo el ancho disponible
+    -Tienen dimensiones modificables(alto,ancho)
+    -No permiten otros elementos a su lado (aunque especifique un ancho, siguen ocupando todo el espacio discponible a lo ancho)
+*/
+.caja-linea,
+.caja-bloque{
+    background-color: darkcyan;
+    color: white;
+    width: 500px;
+    height: 100px;
+    border:medium solid black;
+    padding: 16px;
+}
+.caja-bloque{
+    margin: 32px;
+}
+.caja-linea{
+    margin: 32px;
+}
