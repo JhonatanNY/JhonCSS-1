@@ -9,6 +9,22 @@
 </head>
 
 <body>
+    <article id="temario2-css">
+        <h2>Temario del Curso-Pagina 2(Modelo de cajas)</h2>
+        <ul>
+            <li><a href="#caja-linea-bloque">Cajas en Linea VS Cajas de Bloque</a></li>
+            <li><a href="#display">Propiedad Display</a></li>
+            <li><a href="#visibility">Propiedad visibility</a></li>
+            <li><a href="#overflow">Propiedad overflow</a></li>
+            <li><a href="#tamaño-caja">Tamaño de caja</a></li>
+            <li><a href="#float-clear">Propiedad Float y Clear</a></li>
+            <li><a href="#margenes-verticales">Colapso de Margenes Verticales</a></li>
+            <li><a href="#centrado-cajas">Centrado de cajas</a></li>
+            <li><a href="position.html">Pasar a la siguiente pagina para ver Position</a></li>
+
+        </ul>
+    </article>
+    <hr>
     <h1>Modelo de Caja en CSS</h1>
     <a href="index.html#temario-css">☝️</a>
     <p>Todo en CSS tiene una caja alrededor, y comprender estas cajas es clave para poder crear diseños con CSS o para
@@ -25,12 +41,123 @@
         the bottom of the element.
     </div>
     <hr>
-    <h2>Cajas en Linea VS Cajas de Bloque</h2>
+    <h2 id="caja-linea-bloque">Cajas en Linea VS Cajas de Bloque</h2>
     <span class="caja-linea">Esto es una caja de linea</span>
     <span>Esto es una span</span>
     <div class="caja-bloque">Esto es una caja de bloque</div>
+    <a href="index.html#temario-css">☝️</a>
+
     <hr>
-    <h2>Propiedad Display</h2>
+    <h2 id="display">Propiedad Display</h2>
+    <div class="caja-none">
+        The element is completely removed, as if it wasn't in the HTML code in the first place.
+        The element is completely removed, as if it wasn't in the HTML code in the first place.
+    </div>
+    <span class="caja-linea-bloque">
+        The element shares properties of both an inline and a block element:
+        inline because the element behaves like simple text, and inserts itself in a block of text
+        Block because you can apply height and width values
+        For example, this element has:
+    </span>
+    <p>The element behaves like a list item:The only difference with block is that a list item has a bullet point.</p>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ul>
+    <ol>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ol>
+    <table>
+        <tr>
+            <td>Celda 1</td>
+            <td>Celda 2</td>
+            <td>Celda 3</td>
+        </tr>
+        <tr>
+            <td>Celda 4</td>
+            <td>Celda 5</td>
+            <td>Celda 6</td>
+        </tr>
+        <tr>
+            <td>Celda 7</td>
+            <td>Celda 8</td>
+            <td>Celda 9</td>
+        </tr>
+    </table>
+    <a href="index.html#temario-css">☝️</a>
+    <hr>
+    <h2 id="visibility">Propiedad visibility</h2>
+    <div class="caja-none">
+        The element is completely removed, as if it wasn't in the HTML code in the first place.
+        The element is completely removed, as if it wasn't in the HTML code in the first place.
+    </div>
+    <div class="caja-hidden">
+        Un grupo de hombres encapuchados irrumpió en las instalaciones del canal TC Televisión en Guayaquil la tarde de
+        este martes, tras la declaración del estado de excepción por Daniel Noboa.
+    </div>
+    <a href="index.html#temario-css">☝️</a>
+    <hr>
+    <h2 id="overflow">Propiedad Overflow</h2>
+    <p class="overflow">
+        El presidente Ecuador, Daniel Noboa indicó que están haciendo lo posible y lo imposible para garantizar el
+        rescate de todos, pero tampoco pueden dejar de atender el ataque que está sufriendo la nación.
+    </p>
+    <a href="index.html#temario-css">☝️</a>
+    <hr>
+    <h2 id="tamaño-caja">Tamaño de Caja</h2>
+    <div class="box-sizing-content">
+        Defines how the width and height of the element are calculated: whether they include the padding and borders or
+        not.The width and height of the element only apply to the content of the element.
+        For example, this element has
+    </div>
+    <div class="box-sizing-border">
+        Defines how the width and height of the element are calculated: whether they include the padding and borders or
+        not.The width and height of the element only apply to the content of the element.
+        For example, this element has
+    </div>
+    <article class="container-col-3">
+        <section class="item">seccion 1</section>
+        <section class="item">seccion 2</section>
+        <section class="item">seccion 3</section>
+    </article>
+    <a href="index.html#temario-css">☝️</a>
+    <hr>
+    <h2 id="float-clear">Propiedad Float & Clear</h2>
+    <article class="container-floats">
+        <section class="float-right">Este elemento flota a la derecha</section>
+
+        <section class="float-left">Este elemento flota a la izquierda</section>
+    </article>
+    <div class="clearfix"></div>
+    <article class="">
+        <section class="float">Pushes the element to either the left or right side. The following siblings will wrap
+            around the floating element</section>
+    </article>
+    <a href="index.html#temario-css">☝️</a>
+    <hr>
+    <h2 id="margenes-verticales">Colapso de Margenes Verticales</h2>
+    <p>En entrevista a TV Perú, Jorge Chávez, Ministro de Defensa del Perú, confirmó que se encontró munición peruana en
+        Ecuador: “No estamos hablando de armamento, estamos hablando de munición y explosivos. De acuerdo a las
+        informaciones de las características del material</p>
+    <article class="margin-collapse">
+        <section>Seccion 1</section>
+        <section>Seccion 2</section>
+        <section><span>Span1</span><span>Span2</span><span>Span3</span></section>
+    </article>
+    <a href="index.html#temario-css">☝️</a>
+    <hr>
+    <h2 id="centrado-cajas">Centrado de cajas</h2>
+    <article class="sitio-web">
+        <header>Cabecera</header>
+        <main>Contenido Principal<main>
+                <footer>Pie de Pagina</footer>
+    </article>
+    <a href="index.html#temario-css">☝️</a>
 
 </body>
 

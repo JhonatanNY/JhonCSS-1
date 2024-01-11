@@ -76,7 +76,133 @@ Caja de Bloque
 }
 .caja-bloque{
     margin: 32px;
+    display: block;
+    
 }
 .caja-linea{
     margin: 32px;
+    display: inline;
+ 
 }
+
+/*Propiedad Display
+    inline
+    block
+    inline-block- Se comporta como un elemento de linea pero acepta modificar sus dimensiones(alto y ancho)
+    none
+    table
+    list-item
+    flex - ve curso de Flexbox CSS
+    grid - ve curso de Grid CSS
+*/
+.caja-none,.caja-linea-bloque,.caja-hidden{
+    background-color: darkorange;
+    color: white;
+    width: 600px;
+    height: 300px;
+    border: medium solid black;
+}
+.caja-linea-bloque{
+    display: inline-block;
+}
+.caja-none{
+    display: none;
+}
+.caja-hidden{
+    visibility: hidden;  /*oculta el elemento , pero conserva el espacio, a diferenecia del displaly:none*/
+}
+.overflow{
+    background-color: darkturquoise;
+    width: 200px;
+    height: 100px;
+    /*overflow-y:scroll*/
+    /*overflow-x:scroll*/
+    overflow: visible;
+    overflow: hidden;  
+    overflow: scroll;
+    overflow: auto;
+}
+/*Tamaño de Caja(Box Sizing)*/
+.box-sizing-content,.box-sizing-border{
+    background-color: deepskyblue;
+    box-sizing: content-box;
+    width: 500px;
+    height: 250px;
+    padding: 10px;
+    border:5px solid black
+}
+.box-sizing-border{
+    box-sizing: border-box;
+}
+
+.container-col-3{
+    background-color: burlywood;
+    width: 600px;
+    height: 100px;
+    margin-top: 20px;
+}
+/*uando aplicas "float: left;" a un elemento, 
+se desplazará hacia la izquierda tanto como sea 
+posible dentro de su elemento contenedor, y los 
+elementos siguientes fluirán alrededor de él 
+en el lado derecho.*/
+.container-col-3 > *{
+    width: 200px;
+    box-sizing: border-box;
+    border: thin solid rebeccapurple;
+    padding: 5px;
+    float: left;
+}
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+
+/* Floats - antes se usaba esto para la maquetacion, pero ahora se usa flexbox y grid */
+.container-floats{ 
+    background-color: cornflowerblue;
+}
+.float-left{
+   
+    float: left;
+}
+.float-right{
+
+    float: right;
+}
+.clearfix{              
+    clear: both;        /*  se utiliza para limpiar el flujo flotante y asegurarse de que los elementos siguientes no se vean afectados por el elemento flotante */
+}
+/* Colapso de Margenes Verticales */
+.margin-collapse{
+    background-color: skyblue;
+}
+
+.margin-collapse section{
+    border: thin solid black ;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.margin-collapse span{
+    border: thin solid black ;
+    display: inline-block;
+    margin-right: 16px;
+    margin-left: 16px;
+
+}
+/*Centrado de Cajas*/
+.sitio-web{
+    border: thin solid black;
+    background-color: thistle;
+    width: 800px;
+    height: 500px;
+    padding: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
