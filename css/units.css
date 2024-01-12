@@ -1,0 +1,31 @@
+/*
+
+Unidades de Medida
+1) Absolutas (Su valor no cambia, son unidades del mundo real) 
+pc, cm, mm, in, Q
+pt (1/72in)
+px (1/96in)
+2) Relativas (Su valor es relativo a un contexto)
+em, rem, ex, ch - al tamaño de la fuente
+em - basada en la anchura de la "m" de la fuente del elemento
+rem - basada en la anchura de la "m" de la fuente del elemento raíz (html)
+ex - basada en la altura de la "x" de la fuente del elemento
+ch - basada en la anchura del "O" de la fuente del elemento 
+%-al tamaño del contenedor
+vw, vh, vmin, vmax - al tamaño del viewport 
+vw-ancho del viewport van de 1 a 100
+vh - alto del viewport van de 1 a 100
+vmax - entre vw y vh toma el que tenga mayor valor 
+vmax - entre vw y vh toma el que tenga menor valor
+
+Conversiones entre unidades - http://pxtoem.com/
+*/
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}

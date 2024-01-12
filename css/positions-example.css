@@ -21,7 +21,7 @@ body{
 .hero-image{
     background-color: palegoldenrod;
     width: 100%;
-    height: 50vh;
+    height: 50vh;       /*si le damos valor en % no se muestra hasta que vea contenido, con vh si muestra*/
 }
 
 .slide{
