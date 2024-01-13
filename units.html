@@ -1,16 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/units.css">
 </head>
+
 <body>
     <h1>Unidades de Medida en CSS</h1>
+    <h2>Pixeles</h2>
+    <div class="pixels">
+        You can use rem values.
 
-    
+        The value is relative to the root element's font-size, which is the html element.
+        As a result, the value will not vary depending on the depth of the element in the HTML hierarchy, and will
+        reamin context independent.
+    </div>
+    <h2>Ems</h2>
+    <div class="ems">
+        You can use rem values.
+
+        The value is relative to the root element's font-size, which is the html element.
+        As a result, the value will not vary depending on the depth of the element in the HTML hierarchy, and will
+        reamin context independent.
+        <section class="em-child">
+            Un "em" es equivalente al tamaño de fuente actual del elemento, los em van hacer referencia al tamaño de fuente que tenga el contenedor padre que contiene este elemento
+        </section>
+    </div>
+    <h2>Rems(Root Em)</h2>
+    <div class="rems">
+        You can use rem values.
+        The value is relative to the root element's font-size, which is the html element.
+        As a result, the value will not vary depending on the depth of the element in the HTML hierarchy, and will
+        reamin context independent.
+        <section class="rem-child">
+            Un "em" es equivalente al tamaño de fuente actual del elemento, los em van hacer referencia al tamaño de fuente que tenga el contenedor padre que contiene este elemento
+        </section>
+    </div>
+    <h2>EXs(Root Em)</h2>
+    <div class="exs">
+        You can use rem values.
+        The value is relative to the root element's font-size, which is the html element.
+        As a result, the value will not vary depending on the depth of the element in the HTML hierarchy, and will
+        reamin context independent.
+        <section class="ex-child">
+            Un "em" es equivalente al tamaño de fuente actual del elemento, los em van hacer referencia al tamaño de fuente que tenga el contenedor padre que contiene este elemento
+        </section>
+    </div>
+    <h2>CHs(No entendi bien esto)</h2>
+    <div class="chs">
+      1234567890
+    </div>
+    <div class="chs">
+        qwertyasdfg
+    </div>
+    <div class="chs">
+        12we.,6y{}
+    </div>
+    <h2>Porcentajes(%)</h2>
+    <div class="percentages">
+        Caja de Bloque (se aplico width 80% y height- pero no hace caso en la altura)
+    </div>
+    <div class="height-parent">
+        <section class="height-child" >
+           Para que el height funciona con % debe tener un elemento padre con altura definida
+        </section>
+    </div>
+    <h2>Viewport Units</h2>
+   <div class="viewport">
+    Las unidades de medida vh (viewport height) y vw (viewport width) son unidades relativas que se utilizan en CSS para especificar tamaños en relación con las dimensiones del viewport del navegador.
+   </div>
+
+    <div class="vmax">
+        Caja vmax
+    </div>
+    <div class="vmin">
+        Caja vmin
+    </div>
+
+
+   <!-- <span class="percentages">
+        Caja de Linea
+    </span> -->
     <a href="index.html#temario-css">☝️</a>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
+
 </html>

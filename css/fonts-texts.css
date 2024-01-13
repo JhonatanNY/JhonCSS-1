@@ -1,0 +1,110 @@
+/*
+    Estilos de la Fuente
+    font-family
+    font-size
+    font-weight
+    font-style
+    font-variant
+    line-height
+    font
+*/
+
+.font{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: italic;
+    font-variant: small-caps; /*Hace que el texto este en mayuscula*/
+    line-height: 2; /*la altura entre lineas*/
+}
+
+/*
+Formato wolf o wolf2 - Web Open Font Format
+
+font-display:
+auto - permite que el navegador utilice el método predeterminado que suele ser block
+block - oculta brevemente el texto hasta que la fuente haya sido descargada por completo 
+swap - indica al navegador que utilice la fuente alternativa para mostrar el texto
+hasta que la fuente personalizada se haya cargado por completo
+fallback - es una mezcla de auto y swap
+-
+optional--ocultará el texto, luego lo cargará con la fuente alternativa y finalmente 
+aplicará la fuente personalizada
+*/
+
+@font-face {
+    font-family: "Challet";
+    src: url(../assets/Chalet.woff)format("woff");
+    font-display: swap;
+}
+.chalet{
+    font-family: "Challet",sans-serif;
+}
+
+@font-face {
+    font-family: "Pecita";
+    src: url("../assets/Pecita.woff")format("woff");
+}
+.pecita{
+    font-family: "Pecita",sans-serif;
+}
+
+.releway{
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+}
+
+/*
+text-align
+text-decoration
+text-indent
+text-overflow
+    overflow:hidden
+    white-space:nowrap
+text-transform
+letter-spacing
+white-space
+word-break      Rompe las palabras
+word-spacing    Deja espacios por palabras   
+writing-mode
+*/
+
+.text{
+    background-color: blanchedalmond;
+    border: thin solid black;
+    padding: 1rem;
+    
+    font-size: 2rem;
+    text-align: center;
+    text-align: left;
+    text-decoration: overline;
+    text-decoration: none;
+    text-indent: 2rem;
+    text-transform: capitalize;
+    text-transform: lowercase;
+    text-transform: uppercase;
+    text-transform: none;
+    letter-spacing: 0.5rem;
+    
+}
+.text a{
+    text-decoration: none;
+}
+
+.text-overflow{
+    background-color: blanchedalmond;
+    border: thin solid black;
+    padding: 1rem;
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;   /*La propiedad white-space en CSS se utiliza para controlar cómo se maneja el espacio en blanco dentro de un elemento. La opción nowrap es uno de los valores posibles de esta propiedad. Cuando se establece white-space: nowrap;, significa que el texto dentro del elemento no se envolverá en nuevas líneas automáticamente.*/
+    text-overflow: ellipsis;
+}
+.white-space{
+    white-space: pre;       /*hace que respete los espacios*/
+}
+
+.writing-model{
+    writing-mode: vertical-rl;      /*la palabra esta en vertical de right a left*/
+}

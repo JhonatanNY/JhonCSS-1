@@ -7,25 +7,131 @@ pt (1/72in)
 px (1/96in)
 2) Relativas (Su valor es relativo a un contexto)
 em, rem, ex, ch - al tamaño de la fuente
-em - basada en la anchura de la "m" de la fuente del elemento
-rem - basada en la anchura de la "m" de la fuente del elemento raíz (html)
+em - Un "em" es equivalente al tamaño de fuente actual del elemento, los em van hacer referencia al tamaño de fuente que tenga el contenedor padre que contiene este elemento, 
+La unidad em  se calcula en relación con el tamaño de fuente del elemento padre más cercano que tiene un tamaño de fuente definido.Si no hay un tamaño de fuente definido en los elementos padre, se hereda del elemento <html>
+rem - se basa en el tamaño de fuente del elemento raíz (html).
 ex - basada en la altura de la "x" de la fuente del elemento
 ch - basada en la anchura del "O" de la fuente del elemento 
-%-al tamaño del contenedor
+% - al tamaño del contenedor.  Si no hay un contenedor explícito, se considerará el contenedor inmediato, que podría ser el <body>
 vw, vh, vmin, vmax - al tamaño del viewport 
 vw-ancho del viewport van de 1 a 100
 vh - alto del viewport van de 1 a 100
 vmax - entre vw y vh toma el que tenga mayor valor 
 vmax - entre vw y vh toma el que tenga menor valor
 
+
+Por defecto en font-size es de 16px
 Conversiones entre unidades - http://pxtoem.com/
 */
 html{
     box-sizing: border-box;
+}
+body{
+    margin: 0;
 }
 
 *,
 *::after,
 *::before{
     box-sizing: inherit;
+}
+
+.pixels{
+    background-color: cadetblue;
+    width: 500px;
+    height: 400px;
+    padding: 20px;
+    border: thick solid rebeccapurple;
+    font-size: 16px;       /*por defecto es de 16px*/
+}
+
+.ems{
+    background-color: cadetblue;
+    border: thick solid rebeccapurple;
+    font-size: 20px;
+    padding: 1em .5em;
+}
+
+.em-child{
+    background-color: salmon;
+    border: thick solid beige;
+    font-size: 2em;
+    padding: 1em;
+}
+
+
+.rems{
+    background-color: cadetblue;
+    font-size: 24px;
+    padding: 1rem .5em;
+    border: thick solid rebeccapurple;
+}
+
+.rem-child{
+    background-color: salmon;
+    border: thick solid beige;
+    margin: 0.5rem;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.exs{
+    background-color: cadetblue;
+    font-size: 24px;
+    padding: 1ex .5ex;
+    border: thick solid rebeccapurple;
+}
+
+.ex-child{
+    background-color: salmon;
+    border: thick solid beige;
+    margin: 0.5ex;
+    font-size: 2ex;
+    padding: 1ex;
+}
+.chs{
+    background-color: cadetblue;
+    width: 75ch;   
+}
+
+/* % */
+.percentages{
+    background-color: darkkhaki;
+    padding: 5%;
+    width: 80%;
+    height: 100%;
+    font-size: 100%;
+} 
+
+/* Si le damos altura(heigth) en % va a ignorarlo, la altura va estar definida por el contenido y 
+otro modo es aplicando la altura definida al contenedor padre y despues darle la altura al hijo en % */
+
+.height-parent{
+    background-color: brown;
+    width: 500px;
+    height: 500px;
+}
+.height-child{
+    background-color: coral;
+    width: 50%;
+    height: 50%;
+}
+
+/*viewport*//*Lo recomendable es definir el ancho con % y la altura con vh*/
+.viewport{
+    background-color: rgb(21, 0, 139);
+    color: green;
+    /*Recuerda que la etiqueta body tiene margenes por defecto y que las barras de scrool del navegador tambien son parte del viewport*/
+    width: 100vw;
+    height: 100vh;
+    font-size: 5vw;
+    padding: 2vh 2vw;
+}
+
+.vmin,
+.vmax{
+    background-color: darksalmon;
+    border: thick solid cyan ;
+    width: 100vmin;  /*Escoge el valor maximo entre el ancho y el alto del viewport. Si el ancho es 800 y el alto 300, entonces escogeria 800, y como aqui esta 50, entonces el width seria 400*/
+    height: 100px;
 }

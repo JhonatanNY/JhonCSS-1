@@ -1,0 +1,63 @@
+:root{ /*La pseudoclase root hace referencia al html, pero con la diferencia que tiene mas peso(especificidad)*/
+    color: darkgreen;
+    --default-bg-color:skyblue;
+}
+
+html{
+    color: red;
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+.custom-props-1{            /*La variables se tienen que definir en selectores y el ambito de existencia de una variable es a todos su hijos*/
+    --primary-color:gray;
+    --font-size:32px;
+    background-color: var(--primary-color);
+    
+}
+
+.custom-props-2{
+    background-color: var(--default-bg-color);
+    border: thin solid var(--border-color);
+    padding: 1rem;
+}
+.custom-props-3{
+    font-size: var(--font-size);
+    border: thin solid var(--border-color);
+}
+
+.title-props{
+    --primary-color:green;
+    color: var(--primary-color,orange);/*El segundo parametro se aplica si no encuentra la variable*/
+     background-color: var(--default-bg-color);
+   
+}
+/*Hemos visto la funcion var que es para llamar a la variable*/
+/*Nota la funcion "url" nos sirve para cargar contenido externo*/
+
+/**/
+.ch-10{
+    --padding-size:2ch;
+    --num-ch:10ch;
+    background-color: var(--default-bg-color);
+    font-size: 2rem;
+    padding:var(--padding-size);
+    width: calc(var(--num-ch) + var(--padding-size) * 2)   /*se tiene que dejar espacio ente el operador(+) y los operandos, sino da error*/
+    
+}
+
+.min-max{
+    background-color: var(--default-bg-color) ;
+    margin-top: 1rem;
+    width: min(300px,50vw);/*a clase .min-max tiene estilos que hacen que su ancho sea el menor valor entre 300px y el 20% del ancho de la ventana gráfica*/
+    height: max(200px,25vh);/*su altura sea el mayor valor entre 200px y el 25% de la altura de la ventana gráfica*/
+}
+
+h1{
+    font-size: clamp(2rem, 1rem + 3vw,3rem);
+}
