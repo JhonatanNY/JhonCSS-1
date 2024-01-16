@@ -89,8 +89,8 @@ Caja de Bloque
     inline
     block
     inline-block- Se comporta como un elemento de linea pero acepta modificar sus dimensiones(alto y ancho)
-    none
-    table
+    none - no se vee y pierde su espacio table en el documento html
+    
     list-item
     flex - ve curso de Flexbox CSS
     grid - ve curso de Grid CSS
@@ -141,10 +141,8 @@ Caja de Bloque
     height: 100px;
     margin-top: 20px;
 }
-/*uando aplicas "float: left;" a un elemento, 
-se desplazará hacia la izquierda tanto como sea 
-posible dentro de su elemento contenedor, y los 
-elementos siguientes fluirán alrededor de él 
+/*cuando aplicas "float: left;" a un elemento, se desplazará hacia la izquierda tanto como sea 
+posible dentro de su elemento contenedor, y los elementos siguientes fluirán alrededor de él 
 en el lado derecho.*/
 .container-col-3 > *{
     width: 200px;
@@ -153,11 +151,13 @@ en el lado derecho.*/
     padding: 5px;
     float: left;
 }
-/* apply a natural box layout model to all elements, but allowing components to change */
+/* apply a natural box layout model to all elements, but allowing components to change *//*reseteando el html*/
 html {
     box-sizing: border-box;
   }
-  *, *:before, *:after {
+  *, 
+  *:before, 
+  *:after {
     box-sizing: inherit;
   }
 
@@ -177,7 +177,7 @@ html {
 .clearfix{              
     clear: both;        /*  se utiliza para limpiar el flujo flotante y asegurarse de que los elementos siguientes no se vean afectados por el elemento flotante */
 }
-/* Colapso de Margenes Verticales */
+/* Colapso de Margenes Verticales *//*cuando damos margin verticales a dos elementos, estos no se suman, sino que uno esta sobre otro*/
 .margin-collapse{
     background-color: skyblue;
 }

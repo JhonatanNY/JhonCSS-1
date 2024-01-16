@@ -1,0 +1,22 @@
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.card{
+    border: medium solid black;   
+    border-radius: 20px;
+    width: 400px;
+    overflow: hidden;
+    height: 400px;
+}
+.card img{
+    background-color: beige;
+    height: 300px;
+    object-fit: fill;   /*default*/
+    object-fit: cover;      /*cuando usas object fit cover, se activa otra propiedad llamada object-position*/
+    object-position: 50% 50%;
+    object-position: left top;      /*que comience desde la izquierda y arriba*/
+    object-fit: contain;
+}

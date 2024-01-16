@@ -74,16 +74,18 @@ del documento.Si se mueve puede tomar como referencia 2 elementos:
 }    
 
 .relative-parent{
-    background-color: khaki;
+    background-color: rgb(111, 90, 235);
     width: 600px;
-    height: 50px;
+    height: 200px;
     position: relative;
     top: 50px;
     left: 50px;
 }
 .absolute-child{
-    background-color: lightcoral;
+    background-color: rgb(219, 8, 8);
     position: absolute;
+    width: 100px;
+    height: 100px;
     /*left: 0;
     top: 0;*/
     /*bottom: 0;
@@ -120,11 +122,11 @@ dimensiones de su contenedor padre*/
     top: 50px;
  }
 .sticky-parent{
-    border: thin dashed black;
+    border: thick solid black;
     height: 600px;
 }
 .sticky-child{
-    background-color: lightslategray;
+    background-color: rgb(218, 197, 13);
     position: sticky;
     top: 75px;
 }

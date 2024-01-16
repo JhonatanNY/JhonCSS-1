@@ -15,14 +15,14 @@ html{
 }
 
 .custom-props-1{            /*La variables se tienen que definir en selectores y el ambito de existencia de una variable es a todos su hijos*/
-    --primary-color:gray;
+    --primary-color:rgb(224, 178, 26);
     --font-size:32px;
     background-color: var(--primary-color);
     
 }
 
 .custom-props-2{
-    background-color: var(--default-bg-color);
+    background-color: var(--primary-color);
     border: thin solid var(--border-color);
     padding: 1rem;
 }
@@ -34,7 +34,7 @@ html{
 .title-props{
     --primary-color:green;
     color: var(--primary-color,orange);/*El segundo parametro se aplica si no encuentra la variable*/
-     background-color: var(--default-bg-color);
+    background-color: var(--default-bg-color);
    
 }
 /*Hemos visto la funcion var que es para llamar a la variable*/
@@ -54,10 +54,11 @@ html{
 .min-max{
     background-color: var(--default-bg-color) ;
     margin-top: 1rem;
-    width: min(300px,50vw);/*a clase .min-max tiene estilos que hacen que su ancho sea el menor valor entre 300px y el 20% del ancho de la ventana gráfica*/
-    height: max(200px,25vh);/*su altura sea el mayor valor entre 200px y el 25% de la altura de la ventana gráfica*/
+    margin-left: 0;
+    width: min(500px,50vw);/*min(300px, 50vw): Esto establece el ancho en el valor más pequeño entre 300 píxeles y el 50% del ancho de la ventana (50vw). Si el 50% del ancho de la ventana (50vw) es menor que 300 píxeles, se aplicará ese valor. De lo contrario, se aplicará 300 píxeles.*/
+    height: max(200px,40vh);/*su altura sea el mayor valor entre 200px y el 25% de la altura de la ventana gráfica*/
 }
 
 h1{
-    font-size: clamp(2rem, 1rem + 3vw,3rem);
+    font-size: clamp(2rem, 1rem + 3vw,3rem); /*clamp(minValor,valorPreferido,maxValor)*/
 }
