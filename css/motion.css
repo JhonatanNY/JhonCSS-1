@@ -1,0 +1,379 @@
+html{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+.box{
+    border: thick solid #000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 3rem;
+}
+
+.card{
+    border:thick solid #000;
+    margin-left:  auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+    width: 600px;
+    height: 400px;
+}
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
+
+/*
+    transition-property
+    transition-duration
+    transition-timing-function:none linear ease ease-in ease-out ease-in-out steps
+    transition-delay
+    transition:property duration timing-function delay
+*/
+/*
+La propiedad transition en CSS se utiliza para crear efectos de transición suaves entre los estados de los elementos*/
+.transitions .box{
+    background-color: magenta;
+    transition-property: background-color;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+    transition-delay: 0.5s;
+    transition: border-color 3s linear 1s;
+    transition: all 2s ease-in-out 250ms;       /*con esto apliamos la transiscion a todas las propiedades por igual*/
+    transition: 
+    border-color 2s ease-in-out 250ms,
+    border-radius 2s ease-in-out 250ms;
+}
+
+.transitions .box:hover{
+    background-color: cyan;
+    border-color: red;
+    border-radius: 2rem;
+}
+/*definiendo propiedad por propiedad la transicion*/
+.transitions .card {
+    transition: opacity 1s ease-out,
+                border-color 3s steps(3),
+                filter 2s ease-in 1s,
+                box-shadow 1.5s linear 2s;
+}
+
+.transitions .card:hover{
+    opacity: 0.75;
+    border-color: orchid;
+    filter: blur(0.15em);   /*desenfoque*/
+    box-shadow: 1rem 1rem 2rem 0.5rem #000;  /*La propiedad box-shadow en CSS se utiliza para agregar sombras a los elementos. */
+} 
+
+.transitions .card img{
+    
+}
+.transitions .card img:hover{
+    object-position: 100% 50%;
+    transition: object-position 2s ease-in-out 3s;
+}
+
+.transform-2d img{
+    transition: transform 2s ease-in-out;
+    
+}
+
+/*
+La propiedad transform en CSS se utiliza para aplicar transformaciones a un elemento, como traslación, rotación, escala, etc*/
+.transform-2d img:hover{
+    transform: none;
+    transform: translateX(4rem);
+    transform: translateY(4rem);
+    transform: translateY(-4rem);
+    transform: translate(-4rem,4rem);/*La primera parte de la función (-4rem) indica una traslación hacia la izquierda en el eje X en una distancia de 4 unidades de tamaño de la fuente (rem). La segunda parte (4rem) indica una traslación hacia abajo en el eje Y en una distancia de 4 unidades de tamaño de la fuente (rem).*/
+    transform: translate(-50%,-50%);
+    transform: translate(-50%,-100px);
+    transform: scaleX(2);
+    transform: scaleY(0.5);
+    transform: scale(1.5,1.5);
+    transform: scale(-1,-1);
+    transform: rotateX(60deg);
+    transform: rotateY(60deg);
+    transform: rotateY(90deg);
+    transform: rotateZ(360deg);
+    transform: skewX(-60deg);
+    transform: skew(20deg,20deg);
+
+
+/*
+    matrix( scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+*/
+    transform: matrix(1,2,2,1,20,10);
+    transform: translate(25%,-50%);
+    transform: translate(25%,-50%) rotate(240deg) skew(10deg,20deg) scale(-0.5,-0.5);
+}
+/*Transformaciones 3d - Primero se tiene que activar la perspectiva*/
+.transform-3d img{
+    transition: transform 2s ease-in-out;
+}
+
+.transform-3d{
+    perspective: 10rem;
+}
+
+.transform-3d img:hover{
+    transform: perspective(1000px) translateZ(4rem);    /*la perspectiva se puede aplicar aqui o al contenedor padre de este elemento*/
+    transform: perspective(10rem) translateZ(4rem);
+    transform: perspective(10rem) translateZ(-5rem);
+    transform: translateZ(4rem);
+    transform: translate3d(2rem,50%,-3rem);
+    transform: scaleZ(1.5);
+    transform: scale3d(2,0.5,3);
+    transform: rotateX(60deg);
+    transform: rotateY(60deg);
+    transform: rotateY(-90deg);
+    transform: rotate3d(1,1,1,45deg);
+    /*https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d*/
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 6, 0, 0, 0, 1, 0, 50, 100, 0, 1.1);
+    transform: rotate3d(-1,2.5,-2,60deg) translate3d(2rem,50%,-3rem) scale3d(2,.5,3);
+}   
+
+.transform-origin img{
+    transition: transform 2s ease-in-out;
+    /*transform-origin: x y z */
+    transform-origin: 50% 50% 0;        /*valor por defexto de origin*/
+    transform-origin: 0 0;
+    transform-origin: top left;
+    transform-origin: bottom center;
+
+}
+.transform-origin img:hover{
+    transform: rotate(360deg);
+
+}
+
+/*flip card*/
+
+.flip-card-1,
+.flip-card-2{
+    border:thick solid #000;
+    margin-left:  auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+    width: 600px;
+    height: 400px;
+
+    position: relative;
+    cursor: pointer;
+    transition: transform 1s ease-in-out;
+    perspective: 10rem;         /*esta propiedad*/
+    transform-style: flat;    /*con este no funciona*/
+    transform-style: preserve-3d;   /*esta tambien*//*establece si los hijos de un elemento que tiene perspectiva en 3 dimensiones como se van a comportar sus hijos*/
+}
+
+.flip-card-2{
+    transform-origin: center right;
+}
+
+.flip-card-1:hover{
+    transform: rotateY(180deg);
+}
+.flip-card-2:hover{
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+.flip-card-1 img,
+.flip-card-2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
+.flip-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;  /*esto solo se aplica en 3 dimensiones*/ /*esto aplica con las propiedades de arriba*/
+}
+
+.flip-front{
+    transform: rotateY(0deg);
+}
+.flip-back{
+    transform: rotateY(180deg);
+}
+
+/* Animaciones en CSS*/
+
+@keyframes myAwesomeAnimation {
+    from{
+        opacity: 0;
+        transform: translateX(0);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(100%);
+    }
+}
+
+
+.my-animation{
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation-name: myAwesomeAnimation;     /*nombre de la animacion*/
+    animation-duration: 2s;                                     
+    /*https://cubic-bezier.com/#.14,.85,.84,.55*/
+    animation-timing-function: cubic-bezier(1,0,0,1);       /*se va a mover de cierta manera, hay una pagina donde puedes ver la animacion para despues colocarla aqui*/
+    animation-timing-function: cubic-bezier(.14,.85,.84,.55);
+    animation-timing-function: ease-in-out;
+    animation-delay: 0ms;       /*en cuanto tiempo quiere que comience la animaciona*/
+    animation-iteration-count: 1; /*el numero por defecto que va a repetir la animacion, se puede poner de valor infinite para que siempre se repita*/
+    animation-iteration-count: infinite; /*el numero por defecto que va a repetir la animacion, se puede poner de valor infinite para que siempre se repita*/
+    animation-iteration-count:1;
+    animation-direction: reverse;       /*hace que la animacion comience por el final*/
+    animation-direction: alternate;     /*la animacion va del punto inicial al punto final y regresa de punto final al punto inicial */
+    /* La propiedad animation-fill-mode en CSS se utiliza para especificar cómo deben aplicarse los estilos al elemento antes y después de la ejecución de una animación. */
+    animation-fill-mode:forwards; /*al final de la animacion se queda con los estilo de la animacion*/
+    animation-fill-mode:backwards;/* El valor "backwards" indica que los estilos del primer fotograma de la animación deben aplicarse antes de que la animación comience*/
+    animation-fill-mode: both;
+    /*animation-play-state: running;*/  /*Esta propiedad se usa con javascript , podriamos usarlo para saber en eque momento pausar la animacion y volver a animarla*/
+}
+
+@keyframes myAwesomeAnimation2 {    /*Si necesitas fotogramas intermedios tienes que ve la linea de tiempo en porcentajes*/
+    0%{
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    50%{
+        opacity: 0.5;
+        transform: translateX(-50%);
+
+    }
+
+    75%{
+        transform: translateX(-75%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(100%);
+
+    }
+    
+}
+
+.my-animation-2{
+    animation: myAwesomeAnimation2 3s;
+}
+
+/*animacion multiiple*/
+
+@keyframes multipleAnimation1 {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes multipleAnimation2 {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-100%);
+
+    }
+    100%{
+        transform: translateY(0);
+        
+    }
+}
+
+.motion-examples{
+    text-align: center;
+}
+
+.animation-multiple{
+    animation: multipleAnimation1 2s infinite;
+    animation: multipleAnimation2 2s infinite;
+    animation: multipleAnimation1 2s infinite, multipleAnimation2 1s 3;
+}
+
+/*Ejemplos*/
+
+@keyframes fadeIn {
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+.fade-in{
+    font-size: 5vw;
+    animation: fadeIn 2s linear infinite alternate;
+}
+
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        
+        opacity:0;
+        
+    }
+    
+}
+
+.fade-out{
+    font-size: 5vw;
+    animation: fadeOut 2s linear infinite alternate;
+}
+
+/*sacudida-shake*/
+
+@keyframes shake {
+    10%,90%{
+        transform: translate(-1px,0);
+    }
+    20%,80%{
+        transform: translate(2px,0);
+    }
+    30%,
+    50%,
+    70%{
+        transform: translate(-4px,0);
+    }
+
+   
+    40%,
+    60%{
+        transform: translate(4px,0);
+    }
+}
+
+.shake{
+    font-size: 5vw ;
+    cursor: pointer;
+    display: inline-block;
+}
+.shake:hover{
+    animation: shake 1s cubic-bezier(0.36,0.07,0.19,0.97) both;
+    transform: translate(0,0);
+}

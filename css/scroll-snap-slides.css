@@ -1,0 +1,95 @@
+html{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+}
+
+.slides{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    /* scroll-snap-type: [ x | y | inline | block | both ] [ mandatory | proximity ]; */
+    scroll-snap-type: none;
+    scroll-snap-type: block mandatory;      /*Hay varias reglas para que este efecto funcione 1.altura definida 2.overflow:hideen 3. scroll-snap-type: block mandatory;  */
+}
+.slide{
+    width: 100%;
+    height: inherit;
+    background-color: #1e2345;
+    scroll-snap-align: none;
+    scroll-snap-align: end;
+    scroll-snap-align: start;
+    scroll-snap-align: center;
+}
+
+.slide:nth-child(even){
+    background-color: #108eb4;
+}
+
+.slide-container{
+    width: 100%;
+    width: 80%;
+    height: inherit;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    color: #d9e8f0;
+}
+/*carousel horizontal*/
+.carousel{
+    border: thick solid #d938f0;
+    width: 70%;
+    height: 30vh;
+    overflow-x:hidden ;
+    display: flex;
+}
+.carousel-container{
+    width: 100%;   
+    display: grid;  /*Define el contenedor del carrusel como un contenedor de cuadrícula, permitiendo organizar los elementos secundarios en filas y columnas.*/
+    grid-template-columns: repeat(5,100%); /*Crea una cuadrícula con cinco columnas, cada una ocupando el 100% del ancho del contenedor. Esto implica que el carrusel estará dividido en cinco secciones horizontales.*/
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory;  /* Indica que el desplazamiento suave en el eje horizontal (x) es obligatorio. Esto significa que cuando el usuario realiza un desplazamiento horizontal, el carrusel se ajustará automáticamente para que las secciones estén alineadas de manera ordenada.*/
+
+}
+.carousel-slide{
+    display: flex;      /*Esto establece el contenedor como un contenedor flexible, lo que significa que sus elementos secundarios se pueden organizar en filas o columnas y se pueden expandir o contraer para llenar el espacio disponible.*/
+    flex-direction: column;
+    justify-content: center;    /* Esto alinea los elementos secundarios horizontalmente dentro del contenedor y los centra en relación con el contenedor*/
+    align-items: center;    /*: Esto alinea los elementos secundarios verticalmente dentro del contenedor y los centra en relación con el contenedor*/
+    background-color: #108eb4;
+    scroll-snap-align: center;
+    
+}
+.carousel-slide:nth-child(even){
+    background-color: #1e2345;
+}
+
+/*----------------------------*/
+
+.gradient-text{
+    background-image: linear-gradient(45deg, magenta, yellow);
+    -ms-background-clip:text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text; /* -webkit-background-clip: text;: Esta propiedad específica de WebKit indica que el fondo creado con el degradado lineal (linear-gradient) se debe recortar para que solo se aplique al área del texto dentro del elemento.*/
+    background-clip: text;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;/* -webkit-text-fill-color: transparent;: Esta propiedad específica de WebKit establece el color del texto como transparente. Esto es necesario para que el texto sea completamente transparente y permita que el fondo de degradado lineal sea visible a través del texto. */
+    text-fill-color: transparent; /*sin esto funciona*/
+}
